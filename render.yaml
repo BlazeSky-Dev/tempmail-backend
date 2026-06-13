@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: tempmail-backend
+    runtime: node
+    repo: https://github.com/yourusername/tempmail-backend
+    plan: free
+    envVars:
+      - key: GMAIL_EMAIL
+        sync: false
+      - key: GMAIL_PASSWORD
+        sync: false
+      - key: DOMAIN
+        value: blazesky.qzz.io
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
